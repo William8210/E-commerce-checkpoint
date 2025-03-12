@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { createNewOrder } from "./controllers/ordersController/createOrder.js"; //always rember to add .js to avoid errors
 import dotenv from "dotenv";
-import { CONNECT_DATABASE } from "./config/dataBase.js";
+import { CONNECT_DATABASE } from "./config/database.js";
 
 dotenv.config();
 const app = express();
