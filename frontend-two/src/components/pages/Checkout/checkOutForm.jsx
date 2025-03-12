@@ -6,7 +6,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 //IN ORDER FOR US TO AVOID THE WINDOW ERROR , from paystack documentation, scroll down to call the variable
-const PaystackDynamic = dynamic(() => import("./PaymentWithPaystack"), {
+const PaystackDynamic = dynamic(() => import("./paymentWithPaystack"), {
   ssr: false,
 });
 
