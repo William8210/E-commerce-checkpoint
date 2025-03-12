@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import validator from "validator";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { SEVER_URL } from "@/utils/helper";
 
 //CustomerDetails is introduced in the argument because it was passed as prop from the checkoutform in order to use the details listed in the form
 const PaymentWithPaystack = ({ customerDetails }) => {
@@ -24,7 +25,7 @@ const PaymentWithPaystack = ({ customerDetails }) => {
     //sending a post request using the endpoint host being set up at the backend, using the exact port and then we send all the objects
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/v1/order/create", //The exact link created in our backend
+        `${SEVER_URL}/api/v1/order/create`, //calling the variable we exported that carries the link for our Backend url.. The previous was localhost:3001
         {
           reference: reference, //reference from  paystack paid or declined
           totalCost: totalCost,
