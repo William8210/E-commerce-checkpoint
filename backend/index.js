@@ -6,7 +6,7 @@ import { CONNECT_DATABASE } from "./config/dataBase.js";
 
 dotenv.config();
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001; //either we use 3000 and if we are to host live, the hosting platform will give and use their port
 
 app.use(cors()); //must come before any route is created and gives the front end access
 app.use(express.json()); // Enables the data from the frontend to be passed to the backend, enables you access the body in the req.body
